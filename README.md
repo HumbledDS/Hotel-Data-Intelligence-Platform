@@ -1,13 +1,13 @@
 # Hotel-Data-Intelligence-Platform
 
-## 🏨 **Hotel Data Intelligence Platform**
+##  **Hotel Data Intelligence Platform**
 
-### 📊 **Architecture Globale**
+###  **Architecture Globale**
 ```
 Airflow (Orchestration) → Snowflake (Storage) → dbt (Transformation) → Métriques Business
 ```
 
-### 🎯 **Sous-projets modulaires**
+###  **Sous-projets modulaires**
 
 #### 1. **Pipeline de Réservations en Temps Réel**
 ```python
@@ -76,7 +76,7 @@ models:
           sql: "AVG(booking_value) OVER (PARTITION BY hotel_id)"
 ```
 
-### 🚀 **Features Techniques Avancées**
+### **Features Techniques Avancées**
 
 #### **Micro-app de Monitoring**
 ```python
@@ -118,7 +118,7 @@ class DataFreshnessOperator(BaseOperator):
         pass
 ```
 
-### 🏗️ **Structure du Repository GitHub**
+###  **Structure du Repository GitHub**
 ```
 hotel-data-platform/
 ├── airflow/
@@ -171,7 +171,7 @@ metric:
       - hotel_chain
 ```
 
-### 🎨 **Différenciateurs pour le Poste**
+###  **Différenciateurs pour le Poste**
 
 - **Architecture modulaire** et scalable
 - **Documentation technique** complète
