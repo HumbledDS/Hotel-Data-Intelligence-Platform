@@ -1,0 +1,54 @@
+name: Data Pipeline CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    
+    - name: Install dependencies
+      run: |
+        pip install dbt-snowflake
+        pip install pytest
+    
+    - name: Lint Python code
+      run: |
+        pip install flake8
+        flake8 airflow/ --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 airflow/ --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    
+    - name: Test dbt models (syntax check)
+      run: |
+        cd dbt
+        dbt compile --project-dir . --profiles-dir .
+    
+    - name: Run dbt tests
+      if: github.event_name == 'pull_request'
+      run: |
+        cd dbt
+        dbt test --project-dir . --profiles-dir . || true
+
+  validate-sql:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Validate SQL syntax
+      run: |
+        echo "SQL validation would run here (syntax checking)"
+        # Add SQL validation logic

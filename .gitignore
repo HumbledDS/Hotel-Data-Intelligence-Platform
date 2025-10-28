@@ -205,3 +205,42 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Airflow
+airflow/logs/
+airflow/plugins/__pycache__/
+*.pyc
+airflow.cfg
+airflow.db
+airflow-webserver.pid
+
+# dbt
+dbt/target/
+dbt/.user.yml
+dbt/compiled/
+dbt/logs/
+dbt/dbt_packages/
+
+# Snowflake
+*.csv
+*.json
+*.parquet
+
+# Infrastructure
+*.tfstate
+*.tfstate.*
+*.tfvars
+.terraform/
+
+# Sensitive data
+profiles.yml.local
+.env.local
+secrets/
+
+# IDEs
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,24 @@
+hotel_data_platform:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: <account>
+      user: <username>
+      password: <password>
+      role: <role>
+      warehouse: <warehouse>
+      database: <database>
+      schema: <schema>
+      threads: 4
+    
+    prod:
+      type: snowflake
+      account: <account>
+      user: <username>
+      password: <password>
+      role: <role>
+      warehouse: <warehouse>
+      database: <database>
+      schema: <schema>
+      threads: 4

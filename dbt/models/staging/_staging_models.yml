@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: stg_reservations
+    description: "Staging layer for reservation data"
+    columns:
+      - name: booking_id
+        description: "Unique identifier for each booking"
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        tests:
+          - not_null
+      - name: hotel_id
+        tests:
+          - not_null
+      - name: booking_value
+        description: "Monetary value of the booking"
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 10000

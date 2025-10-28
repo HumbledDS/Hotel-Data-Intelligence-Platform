@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: fact_daily_occupancy
+    description: "Fact table for daily hotel occupancy metrics"
+    
+  - name: fct_bookings
+    description: "Fact table for all bookings"
+    columns:
+      - name: booking_id
+        description: "Unique identifier for each booking"
+        tests:
+          - unique
+          - not_null
+      - name: check_in_date
+        description: "Date of check-in"
+      - name: booking_value
+        description: "Value of the booking"
