@@ -1,7 +1,5 @@
 # Hotel-Data-Intelligence-Platform
 
-Voici une proposition de projet personnel ambitieux qui couvre l'ensemble des technologies mentionnées et démontre des compétences clés pour un poste de Lead Data Platform dans l'hospitalité :
-
 ## 🏨 **Hotel Data Intelligence Platform**
 
 ### 📊 **Architecture Globale**
